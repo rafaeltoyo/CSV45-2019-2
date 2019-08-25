@@ -13,7 +13,7 @@ from skimage.filters import threshold_otsu
 
 import cv2
 
-get_ipython().magic('pylab inline')
+#get_ipython().magic('pylab inline')
 #sem o anaconda, tirar esta linha
 
 #carrega a base de dados
@@ -44,7 +44,7 @@ for image in digits:
     #plt.imshow(image, cmap=plt.cm.gray_r, interpolation='nearest')
     #plt.show()
         
-    regions = regionprops(label_img)
+    regions = regionprops(label_img, coordinates='xy')
         
     for props in regions:
         d0.append(props.eccentricity)
